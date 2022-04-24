@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <title>Cuisine </title>
+  <head>
+    <title>Restaurants </title>
     <link rel="stylesheet" href="style.css">
     <body style="background-color: #FAF2E4">
 
@@ -8,8 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto+Mono&display=swap" rel="stylesheet">
     
+  </head>
+
     <div class="top_title">
-        <a href="index.html" class="top_title">Chicago Eatery</a>
+        <a href="index.html" class="top_title">USA Eatery</a>
         <!-- <a href="javascript:void(0)" class="home" onclick="closeNav()">&times;</a> -->
     </div>
 
@@ -20,19 +23,11 @@
             <a href="about.html">About Us</a>
             <a href="neighborhoods.html">Neighborhoods</a>
             <a href="cuisine.html">Cuisine</a>
-          </div>
+        </div>
           
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-          
-          <script>
-          function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-          }
-          
-          function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-          }
-          </script>
-          </div>
+
+          <script src="nav.js"></script>
+
           </body>
 </html>

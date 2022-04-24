@@ -1,15 +1,15 @@
-.title{
-    font-family: 'Bungee Shade', cursive;
-    font-size: 50px;
-    position: fixed;
-    color: black;
-    top: 49%;
-    left: 45%;
-    margin-top: -100px;
-    margin-left: -200px;
-    transition: margin-left .5s;
-    /* padding: 16px; */
-    
+.title {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 50px;
+  /* position: fixed; */
+  color: black;
+  /* top: 49%; */
+  /* left: 45%; */
+  /* margin-top: -100px; */
+  /* margin-left: -200px; */
+  transition: margin-left .5s;
+  /* padding: 16px; */
+  text-align: center;
 }
 
 .top_title{
@@ -24,14 +24,11 @@
     background-color: #FAF2E4;
 }
 
-.search{
-    size: 200;
-    position: fixed;
-    top: 50%;
-    left: 54.5%;
-    margin-top: -50px;
-    margin-left: -180px;
-
+.search {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .login{
