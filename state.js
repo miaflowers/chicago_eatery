@@ -11,7 +11,7 @@ window.onload=function(){
         select_city.load(function(callback) {
           xhr && xhr.abort();
           xhr = $.ajax({
-            url: 'http://www.corsproxy.com/api.sba.gov/geodata/primary_city_links_for_state_of/' + value + '.json',
+            url: 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/all-state' + value + '.json',
             success: function(results) {
               select_city.enable();
               callback(results);
