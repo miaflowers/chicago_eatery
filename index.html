@@ -3,12 +3,12 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>USA Eatery | Home </title>
+  <title>Chicago Eatery | Home </title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="cards.css">
 
   <link rel="stylesheet" href="about.html">
-  <script src="https://restaurants-near-me-usa.p.rapidapi.com/restaurants/all-state"></script>
+  <!-- <script src="https://restaurants-near-me-usa.p.rapidapi.com/restaurants/all-state"></script> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 
 <body style="background-color: #FAF2E4">
   <div class="title">
-    <a href="#default" class="title">USA Eatery</a>
+    <a href="#default" class="title">Chicago Eatery</a>
   </div>
 
   <div class="search">
@@ -57,40 +57,51 @@
 
 <script> 
 
+const APIHost = "restaurants-near-me-usa.p.rapidapi.com";
+const APIKey = "215412a06cmsh19e5298cfd94113p1e371djsn8fc9d45f72a5";
 
 
+for(let i = 0; i < 4; i++){
 
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/MI/city/West%20Bloomfield/0",
-	"method": "GET",
-	"headers": {
-		"X-RapidAPI-Host": "restaurants-near-me-usa.p.rapidapi.com",
-		"X-RapidAPI-Key": "215412a06cmsh19e5298cfd94113p1e371djsn8fc9d45f72a5"
-	}
-};
+  var requestURL = "https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/IL/city/chicago/" + i;
 
-$.ajax(settings).done(function (restaurants) {
-	// console.log(response);
-  var elements = $();
-  restaurants.forEach(restaurant => {
+  let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": requestURL,
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Host": APIHost,
+      "X-RapidAPI-Key": APIKey 
+    }
 
-    console.log(restaurant)
+  };
 
-    var name = restaurant.restaurantName
-    var addr = restaurant.address
-    var zipcode = restaurant.zipCode
-    var phone = restaurant.phone
+  getRestaurants(settings);
+
+}
 
 
-    var element = '<div class="restaurantCard">' +  name + '<br>' + addr + '<br>' + zipcode + '<br>' + phone +'</div>';
-    $('.restaurants').append(element);
+function getRestaurants(settings){
 
-    
+
+  $.ajax(settings).done(function (restaurants) {
+
+    restaurants.forEach(restaurant => {
+
+      var name = restaurant.restaurantName
+      var addr = restaurant.address
+      var zipcode = restaurant.zipCode
+      var phone = restaurant.phone
+
+      var element = '<div class="restaurantCard">' +  name + '<br>' + addr + '<br>' + zipcode + '<br>' + phone +'</div>';
+      $('.restaurants').append(element);
+
+      
+    });
+
   });
 
-});
+}
 
 </script>
-
