@@ -17,7 +17,7 @@
     font-size: 50px;
     position: fixed;
     color: black;
-    left: 40%;
+    left: 37%;
 }
 
 .html{
@@ -31,26 +31,6 @@
   justify-content: center;
   margin-top: 10px;
 }
-
-.login{
-    size: 100;
-    position: fixed;
-    top: 0%;
-    right: .10%;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-
-.signup{
-    size: 100;
-    position: fixed;
-    top: 1.35%;
-    right: 4%;
-    margin-top: -10 px;
-    margin-right: 20 px;
-}
-
 
 .sidenav {
     font: "Roboto Mono", monospace;
@@ -79,7 +59,7 @@
     color: #f1f1f1;
 }
 
-.sidenav .closebtn {
+.sidenav .closeButton {
     position: absolute;
     top: 0;
     right: 25px;
@@ -124,11 +104,6 @@
     border-radius: 4px;
   }
   
-  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger
-  .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-  } */
   
   /* Change the background color on mouse-over */
   .header a:hover {
@@ -162,6 +137,28 @@
     opacity: 0.4;
   }
   
+<<<<<<< HEAD
+
+  .linfo{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    top: 150%;
+    margin-top: 10px;
+
+  }
+
+
+  .create{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    top: 150%;
+    margin-top: 10px;
+
+  }
+ 
+=======
   /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other 
   @media screen and (max-width: 500px) {
     .header a {
@@ -176,6 +173,7 @@
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -231,3 +229,6 @@
     padding-bottom: 130%;
   }
   
+=======
+>>>>>>> b20b8cb4173124f3dcfcb61cdf6ad65b35816710
+>>>>>>> 27c00ce4de69a09a2e7c993c770bfc668d575d04

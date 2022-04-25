@@ -12,12 +12,12 @@
   </head>
 
     <div class="top_title">
-        <a href="index.html" class="top_title">USA Eatery</a>
+        <a class="top_title">USA Eatery</a>
         <!-- <a href="javascript:void(0)" class="home" onclick="closeNav()">&times;</a> -->
     </div>
 
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="state.html">States</a>
@@ -30,4 +30,75 @@
           <script src="nav.js"></script>
 
           </body>
-</html>
+
+<script> 
+
+const APIHost = "restaurants-near-me-usa.p.rapidapi.com";
+const APIKey = "af093498d8mshd4e95e06b3ea3aap1d9410jsn8864d1b68297";
+
+
+for(let i = 0; i < 4; i++){
+
+  var requestURL = "https://restaurants-near-me-usa.p.rapidapi.com/restaurants/all-state" + i;
+
+  let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": requestURL,
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Host": APIHost,
+      "X-RapidAPI-Key": APIKey 
+    }
+
+  };
+
+  getStates(settings);
+
+}
+
+
+function getStates(settings){
+  $.ajax(settings).done(function (restaurants){
+    restaurants.forEach(stateRest =>{
+      var state = stateRest.stateName
+
+      var element2 = '<div class="restaurantCard">' + state +'</div>';
+      $('.usStates').append(element2)
+    })
+  })
+}
+
+// function getRestaurants(settings){
+
+
+// $.ajax(settings).done(function (restaurants) {
+
+//   restaurants.forEach(restaurant => {
+
+//     var name = restaurant.restaurantName
+//     var addr = restaurant.address
+//     var zipcode = restaurant.zipCode
+//     var phone = restaurant.phone
+
+//     var element = '<div class="restaurantCard">' +  name + '<br>' + addr + '<br>' + zipcode + '<br>' + phone +'</div>';
+//     $('.restaurants').append(element);
+
+    
+//   });
+
+// });
+
+// }
+
+// $(document).ready(function(settings){
+//   $select.html('<option value="">Select brand</option>')
+//   $.each(data)
+// }
+// })
+// function getStates(settings){
+//   $.ajax(settings).done(function (restaurants) {
+
+
+// }
+//   $select.html('option value=""')

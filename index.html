@@ -18,9 +18,10 @@
 
 <body style="background-color: #FAF2E4">
   <div class="title">
-    <a href="#default" class="title">USA Eatery</a>
+    <a class="title">USA Eatery</a>
   </div>
 
+<<<<<<< HEAD
    <div class="container">
         <div id="wrapper">
   <div class="search">
@@ -221,12 +222,107 @@
 
 
  
+=======
+  <div class="container">
+    <div id="wrapper">
+  <div class="search">
+    <form class="search-bar">
+          
+          <div class="places">
+            <form id="form"> 
+            <h2>Pick your State</h2>
+            <div class="control-group">
+              <label for="select-beast">State:</label>
+              <select id="select-state" placeholder="Pick a State........."> 
+                <option value="">Select a state...</option>
+                <option value="Alabama">AL</option>
+                <option value="Alaksa">AK</option>
+                <option value="Arizona">AZ</option>
+                <option value="Arkansas">AR</option>
+                <option value="California">CA</option>
+                <option value="Colorado">CO</option>
+                <option value="Connecticut">CT</option>
+                <option value="Deleware">DE</option>
+                <option value="Florida">FL</option>
+                <option value="Georgia">GA</option>
+                <option value="Hawaii">HI</option>
+                <option value="Idaho">ID</option>
+                <option value="Illinois">IL</option>
+                <option value="Indiana">IN</option>
+                <option value="Iowa">IA</option>
+                <option value="Kansas">KS</option>
+                <option value="Kentucky">KY</option>
+                <option value="Louisiana">LS</option>
+                <option value="Maine">ME</option>
+                <option value="Maryland">MD</option>
+                <option value="Massachusetts">MS</option>
+                <option value="Michigan">MI</option>
+                <option value="Minnesota">MN</option>
+                <option value="Mississippi">MS</option>
+                <option value="Missouri">MO</option>
+                <option value="Montana">MT</option>
+                <option value="Nebraska">NE</option>
+                <option value="Nevada">NV</option>
+                <option value="New Hamsphire">NH</option>
+                <option value="New Jersey">NJ</option>
+                <option value="New Mexico">NM</option>
+                <option value="New York">NY</option>
+                <option value="North  Carolina">NC</option>
+                <option value="North Dakota">ND</option>
+                <option value="Ohio">OH</option>
+                <option value="Oklahoma">OK</option>
+                <option value="Oregon">OR</option>
+                <option value="Pennsylvania">PA</option>
+                <option value="Rhode Island">RI</option>
+                <option value="South Carolina">SC</option>
+                <option value="South Dakota">SD</option>
+                <option value="Tennessee">TN</option>
+                <option value="Texas">TX</option>
+                <option value="Utah">UT</option>
+                <option value="Vermont">VT</option>
+                <option value="Virginia">VA</option>
+                <option value="Washington">WA</option>
+                <option value="West Virginia">WV</option>
+                <option value="Wisconsin">WI</option>
+                <option value="Wyoming">WY</option>
+              </select>
+        
+                <button>Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+      </div>
+>>>>>>> 27c00ce4de69a09a2e7c993c770bfc668d575d04
 
-</body>
 
-</html>
 
-<script> 
+  <div id="mySidenav" class="sidenav">
+    <!-- <script src="index.js"></script> -->
+    <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="state.html">States</a>
+    <a href="chicago.html"> Chicago</a>
+    <a href="login.html"> Login</a>
+    <a href="signup.html"> SignUp</a>
+  </div>
+
+
+  <div class="restaurants">
+
+
+
+  </div>
+
+  <span style="font-size:30px;cursor:pointer; position: absolute; top: 0;" onclick="openNav()">&#9776;</span>
+
+  <script src="index.js"></script>
+  <script src="nav.js"></script>
+
+<script>  
 
 const APIHost = "restaurants-near-me-usa.p.rapidapi.com";
 const APIKey = "af093498d8mshd4e95e06b3ea3aap1d9410jsn8864d1b68297";
@@ -234,7 +330,7 @@ const APIKey = "af093498d8mshd4e95e06b3ea3aap1d9410jsn8864d1b68297";
 
 for(let i = 0; i < 4; i++){
 
-  var requestURL = "https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/IL/city/chicago/" + i;
+  var requestURL = "https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/0" + i;
 
   let settings = {
     "async": true,
@@ -265,7 +361,7 @@ function getRestaurants(settings){
       var zipcode = restaurant.zipCode
       var phone = restaurant.phone
 
-      var element = '<div class="restaurantCard">' +  name + '<br>' + addr + '<br>' + zipcode + '<br>' + phone +'</div>';
+      var element = '<div class="restaurantCard">' +  name + '<br>' + addr + '<br>' + zipcode + '<br>' + phone + '</div>';
       $('.restaurants').append(element);
 
       
@@ -275,15 +371,26 @@ function getRestaurants(settings){
 
 }
 
-function getStates(settings){
-  $.ajax(settings).done(function (states){
-    states.forEach(state =>{
-      var st = state.stateName
+// if (restaurants.length > 
 
 
-      var element
-    })
-  })
-}
 
-</script>
+
+
+
+
+
+// function getStatesAndCitites(settings){
+//   $.ajax(Settings).done(function (location){
+//     location.forEach(element => {
+//       var name = element.restaurantName
+//       var address = element.address
+//       var zip = element.zipCode
+//       var number = element.phone
+
+//       var element = '<div class="restaurantCard">' +  name + '<br>' + address + '<br>' + zip + '<br>' + number + '</div>';
+//       $('.restaurants').append(element);
+
+      
+//     });
+//   }
