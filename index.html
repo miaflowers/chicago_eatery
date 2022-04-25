@@ -23,7 +23,7 @@
 
   <div class="search">
     <form class="search-bar">
-      <input id="search" type="text" placeholder="restaurants...">
+      <input id="search" type="text" placeholder="restaurants, takeout, delivery...">
       <button id="search" class="search-button">search</button>
     </form>
 
@@ -36,10 +36,13 @@
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="state.html">States</a>
+    <a href="chicago.html"> Chicago</a>
   </div>
 
 
   <div class="restaurants">
+
+
 
   </div>
 
@@ -127,7 +130,7 @@
 <script> 
 
 const APIHost = "restaurants-near-me-usa.p.rapidapi.com";
-const APIKey = "215412a06cmsh19e5298cfd94113p1e371djsn8fc9d45f72a5";
+const APIKey = "af093498d8mshd4e95e06b3ea3aap1d9410jsn8864d1b68297";
 
 
 for(let i = 0; i < 4; i++){
@@ -171,6 +174,17 @@ function getRestaurants(settings){
 
   });
 
+}
+
+function getStates(settings){
+  $.ajax(settings).done(function (states){
+    states.forEach(state =>{
+      var st = state.stateName
+
+
+      var element
+    })
+  })
 }
 
 </script>
