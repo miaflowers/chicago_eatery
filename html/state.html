@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>State </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cards.css">
+
+<body style="background-color: #292929">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+
+
+  <div class="top_title">
+    <a class="top_title">USA Eatery</a>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="state.html">States</a>
+    <a href="chicago.html"> Chicago</a>
+    <a href="login.html"> Login</a>
+    <a href="signup.html"> SignUp</a>
+
+
+  </div>
+
+
+<!-- side nav bar icon -->
+
+  <span style="font-size:30px;cursor:pointer; position: absolute;color: #878787; top: 0;" onclick="openNav()">&#9776;  </span>
+
+  <script src="../js/nav.js"></script>
+
+</body>
+
+
+<div class="flex-container">
+  <div id="wrapper">
+    <div class="search">
+      <form class="search-bar">
+
+        <div class="places">
+          <form id="form">
+            <h2 class="pick-state" style="text-align: center;">Pick your State</h2>
+            <div class="control-group">
+              <select id="select-state" placeholder="Pick a State.........">
+                <option value="">Select a state...   &#x2193;</option>
+                <option value="AL">Alabama</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Conneticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LS">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MS">Massachussetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hamsphire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennnesesse</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virgina</option>
+                <option value="WA">Washing</option>
+                <option value="WV">West Virgina</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">WYyoming</option>
+              </select>
+              <button id="selectedState">Search</button>
+          </form>
+        </div>
+    </div>
+  </div>
+  </form>
+</div>
+</div>
+
+
+
+<div class="restaurants">
+
+
+</div>
+
+<script>
+
+
+$(function(){
+
+// jQuery methods go here...
+
+const APIHost = "restaurants-near-me-usa.p.rapidapi.com";
+const APIKey = "af093498d8mshd4e95e06b3ea3aap1d9410jsn8864d1b68297";
+
+
+  $('#selectedState').on('click', function () {
+    $('.restaurants').empty();
+    var state = $('select#select-state').val();
+
+      console.log('test');
+
+      for (let i = 0; i < 4; i++) {
+
+        var requestURL = "https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/" + state + "/" + i;
+
+        console.log(requestURL)
+
+        let settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": requestURL,
+          "method": "GET",
+          "headers": {
+            "X-RapidAPI-Host": APIHost,
+            "X-RapidAPI-Key": APIKey
+          }
+
+        };
+
+        getRestaurants(settings, state)
+
+
+      }
+
+
+      return false;
+
+    
+
+  });
+
+
+});
+
+
+  function getRestaurants(settings, state){
+    $.ajax(settings).done(function (restaurants) {
+
+      restaurants.forEach(restaurant => {
+
+        var cityName = restaurant.cityName;
+        var stateName = restaurant.stateName;
+        var name = checkAvailability(restaurant.restaurantName)
+        var addr = checkAvailability(restaurant.address)
+        var zipcode = checkAvailability(restaurant.zipCode)
+        var phone = checkAvailability(restaurant.phone)
+        var website = checkWebsite(restaurant.website)
+
+        var encodedName = encodeString(name);
+        var encodedAddr = encodeString(addr);
+
+        var googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodedAddr}+${encodedName}+${state}`;
+
+        // We are using string interpolation 
+        // start the string with backtick 
+        // ${} to invoke variables 
+
+        var element = `
+        <div class="restaurantCard">
+
+          <div class="name"> ${name} <br> <span class="cityName"> ${cityName}, ${stateName} </span></div>
+
+          <div class="addr"> <strong style="color: #22c8e5">Address:</strong> <br>  ${addr} </div>
+
+          <div class="zipcode"><strong style="color: #22c8e5">Zipcode:</strong> <br>  ${zipcode} </div>
+
+          <div class="phone"> <strong style="color: #22c8e5">Phone:</strong> <br>  ${phone} </div>
+
+          <div class="googleMaps"> <a href="${googleMapsLink}" target="_blank"> Google Maps </a></div>
+
+          <div class="website"> <a href="${website}" target="_blank"> website </a></div>
+
+        </div>`;
+
+
+          $('.restaurants').append(element);
+
+
+
+  });
+
+
+});
+}
+
+
+// Used to replace spaces with a + sign
+// used for googles url format 
+function encodeString(string){
+    string = string.replace(/ /g,"+"); 
+    return string;
+  }
+
+  function checkAvailability(string){
+    if(string.length === 0 ){
+      string = 'Not available'
+    }
+
+    return string;
+
+  }
+
+
+  function checkWebsite(website){
+
+    if(website.length === 0 ){
+      string = '#'
+    }
+
+    return website;
+    
+  }
+
+</script>
+
+
+<!-- update states in state file   -->
+<!-- create folders -->
+<!-- fix chicago.html -->
+<!-- create grid with  flex box -- google it  -->
+<!-- update styles and css styles -->
+<!-- Copy every single page on this project into my project then work from there -->

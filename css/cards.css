@@ -1,0 +1,199 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+.restaurants{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Varela Round", sans-serif;
+
+}
+
+.restaurantCard {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    border: 2px solid #1F2124;
+    width: 250px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 8px #414141;
+    background-color: #1F2124;
+    color: white;
+    padding: 0 10px 10px 10px;
+    font-family: "Varela Round", sans-serif;
+}
+.restaurantCard:hover{
+    transition: .3s ease-in-out;
+    transform: scale(1.1); 
+}
+
+.name {
+    background-color: #1F2124;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: black;
+    font-weight: bold;
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    font-size: 18px;
+    padding: 0 10px;
+    border-bottom: 1px solid #22c8e5;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+    text-transform: uppercase;
+    flex-direction: column;
+
+}
+
+.cityName{
+    font-size: 15px;
+    margin-top: 6px;
+    font-style: italic;
+    color: #22c8e5;
+
+
+
+}
+
+
+.notAvailable{text-decoration: underline;}
+
+.addr, .zipcode{
+    width: 100%;
+    text-align: center;
+    padding: 20px 10px;
+    border-bottom: 1px dashed darkgrey;
+
+}
+
+
+.phone{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.googleMaps{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.googleMaps a{
+    width: 100%;
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    border: 2px solid #22c8e5;
+    background: #22c8e5;
+    border-radius: 25px;
+}
+
+.googleMaps a:hover{
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    border: 2px solid #058298;
+    background: #058298;
+}
+
+
+.website{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.website a{
+    width: 100%;
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    border: 2px solid #BB86FC;
+    background: #BB86FC;
+    border-radius: 25px;
+}
+
+.website a:hover{
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    border: 2px solid #8f50dd;
+    background: #8f50dd;
+}
+
+
+#selectedState {
+    text-decoration: none;
+    width: 100px;
+    padding: 10px 15px;
+    background: #22c8e5;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-family: "Varela Round", sans-serif;
+;
+
+}
+
+#selectedState:hover{
+    transition: .3s ease-in-out;
+    background: #058298;
+}
+
+#select-state{
+    padding: 10px 50px;
+    margin: 0 20px;
+    border: none;
+    margin: 0 20px;
+    border: 1px solid #22c8e5 !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-family: "Varela Round", sans-serif;
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  text-align: center;
+
+}
+
+strong{
+    line-height: 30px;
+}
+
+.pick-state{
+    font-family: "Varela Round", sans-serif;
+    color: #878787;
+}
+
+
+.login{
+    padding: 10px 50px;
+    margin: 0 20px;
+    border: none;
+    margin: 0 20px;
+    border: 1px solid #22c8e5 !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-family: "Varela Round", sans-serif;
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  text-align: center;
+}

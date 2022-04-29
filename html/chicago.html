@@ -4,8 +4,8 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Chicago </title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cards.css">
 
   <link rel="stylesheet" href="about.html">
   <!-- <script src="https://restaurants-near-me-usa.p.rapidapi.com/restaurants/all-state"></script> -->
@@ -16,7 +16,7 @@
 
 </head>
 
-<body style="background-color: #FAF2E4">
+<body style="background-color: #292929">
   <div class="title">
     <a class="title">USA Eatery</a>
   </div>
@@ -34,16 +34,23 @@
   </div>
 
 
+<!-- fix logo and style it -->
+  <img class="usa-logo" src="../images/usaLogo.png" alt="">
+
+
   <div class="restaurants">
 
 
 
   </div>
 
-  <span style="font-size:30px;cursor:pointer; position: absolute; top: 0;" onclick="openNav()">&#9776;</span>
 
-  <script src="index.js"></script>
-  <script src="nav.js"></script>
+    <!-- side nav bar icon -->
+    
+  <span style="font-size:30px;cursor:pointer; position: absolute;color: #878787; top: 0;" onclick="openNav()">&#9776;  </span>
+  
+  <script src="../js/index.js"></script>
+  <script src="../js/nav.js"></script>
 
 </body>
 
@@ -98,15 +105,13 @@ function getRestaurants(settings){
 
 }
 
-function getStates(settings){
-  $.ajax(settings).done(function (states){
-    states.forEach(state =>{
-      var st = state.stateName
-
-
-      var element
-    })
-  })
-}
+// function getStates(settings){
+//   $.ajax(settings).done(function (states){
+//     states.forEach(state =>{
+//       var st = state.stateName
+//       var element
+//     })
+//   })
+// }
 
 </script>
