@@ -26,22 +26,25 @@
     <!-- <script src="index.js"></script> -->
     <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
     <a href="index.html">Home</a>
-    <a href="about.html">About Us</a> 
+    <a href="about.html">About Us</a>
     <a href="chicago.html"> Chicago</a>
     <a href="state.html">States</a>
-
+  
     <!-- <a href="login.html"> Login</a>
     <a href="signup.html"> SignUp</a> -->
   </div>
 
 
-<!-- logo class but we decided to comment it out and switch up the layout -->
+<!-- logo but decided not to use it -->
   <!-- <img class="usa-logo" src="../images/usaLogo.png" alt=""> -->
 
 
   <div class="restaurants">
 
+
+
   </div>
+
 
     <!-- side nav bar icon -->
     
@@ -53,9 +56,6 @@
 </body>
 
 </html>
-
-<!-- Rapid Api Host/Key to render chicago restaurants -->
-<!-- check stack overflow -->
 
 <script> 
 
@@ -83,6 +83,7 @@ for(let i = 0; i < 4; i++){
 
 }
 
+
 function getRestaurants(settings){
 
 
@@ -90,13 +91,10 @@ function getRestaurants(settings){
 
     restaurants.forEach(restaurant => {
 
-// name, address, zipcode, phone, website listed on cards 
-
       var name = restaurant.restaurantName
       var addr = restaurant.address
       var zipcode = restaurant.zipCode
       var phone = restaurant.phone
-      var website = restaurant.website
 
       var element = '<div class="restaurantCard">' +  name + '<br>' + addr + '<br>' + zipcode + '<br>' + phone +'</div>';
       $('.restaurants').append(element);
@@ -107,6 +105,7 @@ function getRestaurants(settings){
   });
 
 }
+
 
 
 </script>

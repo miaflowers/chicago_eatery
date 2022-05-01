@@ -5,7 +5,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 8px #414141;
     font-family: "Varela Round", sans-serif;
+    
 
 }
 
@@ -59,8 +62,6 @@
     margin-top: 6px;
     font-style: italic;
     color: #22c8e5;
-
-
 
 }
 
