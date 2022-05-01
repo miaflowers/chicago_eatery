@@ -20,6 +20,16 @@
     justify-content: center;
     width: 100%;
   }
+
+  .desc {
+
+    font-family: 'Arial';
+    font-size: 16px;
+    color: #878787;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
   
   .html{
       background-color: #FAF2E4;
@@ -78,6 +88,7 @@
       text-align: center;
       height: 300px;
       width: 400px;
+      color: white;
   
       position: fixed;
       top: 50%;
@@ -138,14 +149,6 @@
       opacity: 0.4;
     }
     
-    .linfo{
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      top: 150%;
-      margin-top: 10px;
-  
-    }
   
     .create{
       display: flex;
@@ -191,6 +194,11 @@
       top: 0;
       left: 0;
     }
+
+    .location:hover{
+      transition: .3s ease-in-out;
+      transform: scale(1.1); 
+  }
     
     /* picture sizing on index page */
     .ratio1x1 {
@@ -208,4 +216,17 @@
     .ratio9x16 {
       padding-bottom: 130%;
     }
+
     
+
+/* future add-ons */
+
+
+       /* .linfo{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      top: 150%;
+      margin-top: 10px;
+  
+    } */
